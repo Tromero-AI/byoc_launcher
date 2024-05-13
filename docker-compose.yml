@@ -1,0 +1,34 @@
+version: '3.3'
+
+services:
+  web:
+    image: tromerocentral/bring_your_own_conainer:stripped_inference
+    ports:
+      - "5000:5000"
+    volumes:
+      - ${DATA_DIR_PATH}:/app/data
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_RUN_HOST=0.0.0.0
+      - HF_TOKEN=${HUGGINGFACE_API_KEY}
+      - SERVER_KEY=${SERVER_KEY}
+
+  lorax:
+    image: ghcr.io/predibase/lorax:latest
+    command: --model-id mistralai/Mistral-7B-Instruct-v0.2
+    environment:
+      - HF_TOKEN=${HUGGINGFACE_API_KEY}
+    volumes:
+      - ${DATA_DIR_PATH}:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+
+networks:
+  default:
+    driver: bridge
