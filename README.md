@@ -21,7 +21,7 @@ Installation
 ## Installation
 
 ```bash
-git clone [<repository-url>]https://github.com/proofoftraining/byoc_launcher.git)
+git clone https://github.com/proofoftraining/byoc_launcher.git
 cd byoc_launcher/
 sudo bash launcher.sh
 ```
