@@ -31,6 +31,6 @@ prompt_and_save "SERVER_KEY"
 
 # Run docker compose
 echo "Running Docker Compose..."
-docker compose up
+docker compose up -d
 
 echo "Setup complete."
