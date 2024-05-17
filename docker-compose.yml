@@ -13,7 +13,7 @@ services:
       - SERVER_KEY=${SERVER_KEY}
 
   lorax:
-    image: tromerocentral/bring_your_own_conainer:stripped_inference
+    image: ghcr.io/predibase/lorax:latest
     command: --model-id /data/Mistral-7B-Instruct-v0.2/
     volumes:
       - ${DATA_DIR_PATH}:/data
