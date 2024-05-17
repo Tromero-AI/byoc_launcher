@@ -10,14 +10,11 @@ services:
     environment:
       - FLASK_APP=app.py
       - FLASK_RUN_HOST=0.0.0.0
-      - HF_TOKEN=${HUGGINGFACE_API_KEY}
       - SERVER_KEY=${SERVER_KEY}
 
   lorax:
-    image: ghcr.io/predibase/lorax:latest
-    command: --model-id mistralai/Mistral-7B-Instruct-v0.2
-    environment:
-      - HF_TOKEN=${HUGGINGFACE_API_KEY}
+    image: tromerocentral/bring_your_own_conainer:stripped_inference
+    command: --model-id /data/Mistral-7B-Instruct-v0.2/
     volumes:
       - ${DATA_DIR_PATH}:/data
     deploy:
