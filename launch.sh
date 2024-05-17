@@ -47,4 +47,7 @@ prompt_and_save "SERVER_KEY"
 echo "Running Docker Compose..."
 docker compose up -d
 
+EXT_IP=$(curl -4 -s ifconfig.me)
 echo "Setup complete."
+echo "You can now enter the server: http://$EXT_IP:5000"
+echo "into the tromero website. Unless you have a custom setup"

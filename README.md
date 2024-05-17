@@ -7,7 +7,6 @@ Before you can use this repository, ensure you have the following prerequisites 
 - **NVIDIA Drivers**: Check if NVIDIA drivers are installed by running `nvidia-smi` in your terminal.
 - **Docker**: Docker must be installed on your system.
 - **NVIDIA Docker Toolkit**: Required for Docker to utilize GPU capabilities.
-- **Hugging Face API Key**: You will need an API key from Hugging Face .
 - **Docker Compose Plugin**: Install this by running the following commands:
   ```bash
   sudo apt-get update
@@ -26,7 +25,7 @@ cd byoc_launcher/
 sudo bash launcher.sh
 ```
 
-During this process, you will be prompted to enter your Hugging Face API key and your server key.
+This process will take a while to download the base model. Once the download is complete you will be prompted for your server key from the tromero website.
 
 ## Usage
 After completing the installation
