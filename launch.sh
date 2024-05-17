@@ -27,7 +27,7 @@ if [ ! -d "$DATA_DIR_PATH/Mistral-7B-Instruct-v0.2" ]; then
     sudo apt-get update && sudo apt-get install google-cloud-cli
     mkdir -p $DATA_DIR_PATH/models--mistralai--Mistral-7B-Instruct-v0.2
     echo "Downloading Mistral-7B-Instruct-v0.2 model from GCS..."
-    gsutil cp -r gs://mistral-bucket-432/Mistral-7B-Instruct-v0.2 $DATA_DIR_PATH/Mistral-7B-Instruct-v0.2
+    gsutil cp -r gs://mistral-bucket-432/Mistral-7B-Instruct-v0.2 $DATA_DIR_PATH
 else
     echo "Mistral-7B-Instruct-v0.2 model already exists."
 fi
